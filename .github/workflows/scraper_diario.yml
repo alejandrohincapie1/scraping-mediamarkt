@@ -2,7 +2,7 @@ name: Scraper diario MediaMarkt
 
 on:
   schedule:
-    - cron: '0 7 * * *'   # Todos los dias a las 07:00 UTC (09:00 en España en verano, 08:00 en invierno)
+    - cron: '17 7 * * *'   # Todos los dias a las 07:00 UTC (09:00 en España en verano, 08:00 en invierno)
   workflow_dispatch:       # Permite lanzarlo a mano desde la pestaña Actions
 
 permissions:
@@ -12,9 +12,9 @@ jobs:
   scrapear:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: '3.13'
           cache: pip
